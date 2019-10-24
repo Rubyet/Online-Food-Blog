@@ -27,6 +27,9 @@ router.get('/adduser', function(req, res){
 	res.render('user/adduser');
 });
 
+router.get('/reg', function(req, res){
+	res.render('user/reg');
+});
 router.post('/adduser', function(req, res){
 
 	var user = {

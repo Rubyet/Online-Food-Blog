@@ -5,7 +5,7 @@ router.get('/', function(req, res){
 
 	//req.session.un = null;
 	res.clearCookie('username');
-	res.redirect('/login');
+	res.redirect('/blog/blog');
 });
 
 module.exports = router;

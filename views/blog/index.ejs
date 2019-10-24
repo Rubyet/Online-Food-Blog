@@ -9,7 +9,7 @@
 		<tr>
 			<td >
 				<a href="/login">Login</a> |
-				<a href="/register">Register</a> |
+				<a href="/user/reg">Register</a> |
 				<a href="/restaurant/restaurantList">Restaurant List</a>
 			</td>
 		</tr>
@@ -18,19 +18,19 @@
 <br><br>
 	
 
-	<% for(var i=0; i< restaurant.length; i++){ %>
+	<% for(var i=0; i< blog.length; i++){ %>
 	<table border="1" align="center" >
 		<tr>
 			<td><h2>username</h2></td>
 		</tr>
 		<tr>
-			<td><h4>main post :</td>
+			<td><h4><%= blog[i].post %></td>
 		</tr>
 		<tr>
 			<td>
 				<h4>Comments:</h4>
 				<form>
-				<table align="center" border="1">
+				<table  border="1">
 					<tr>
 						<td >
 							commenter name
