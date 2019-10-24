@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Food Blog</title>
+</head>
+<body>
+	<h1 align="center">Welcome To Our Blog</h1>
+	<table align="center">
+		<tr>
+			<td >
+				<a href="/login">Login</a> |
+				<a href="/register">Register</a> |
+				<a href="/restaurant/restaurantList">Restaurant List</a>
+			</td>
+		</tr>
+	</table>	
+
+<br><br>
+	
+
+	<% for(var i=0; i< restaurant.length; i++){ %>
+	<table border="1" align="center" >
+		<tr>
+			<td><h2>username</h2></td>
+		</tr>
+		<tr>
+			<td><h4>main post :</td>
+		</tr>
+		<tr>
+			<td>
+				<h4>Comments:</h4>
+				<form>
+				<table align="center" border="1">
+					<tr>
+						<td >
+							commenter name
+						</td>
+					</tr>
+					<tr>
+						<td >
+							comments
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="text" name="comment"> | <input type="submit" name="submit" value="Go">
+						</td>
+					</tr>
+				</table>
+				</form>
+			</td>
+		</tr>
+		
+	</table>	
+	<br><br>
+			
+		
+	<% } %>
+	
+</body>
+</html>

@@ -4,7 +4,7 @@ var router = express.Router();
 
 
 
-router.get('/restaurentList', function(req, res){
+router.get('/restaurantList', function(req, res){
 
 		restaurantModel.getAll(function(results){
 			
