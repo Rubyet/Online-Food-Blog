@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Menu</title>
+</head>
+<body>
+	<h1>Menu</h1>
+
+	<a href="/restaurant/restaurentList">Back</a> |
+	<a href="/logout">logout</a>
+
+<br><br>
+	
+	<table border="1" align="center" >
+	<tr>
+		<td><h4>No.</h4></td>
+		<td><h4>Item Name.</h4></td>
+		<td><h4>Price.</h4></td>
+	</tr>
+	<% for(var i=0; i< menu.length; i++){ %>
+	
+		<tr>
+			<td><%= i %></td>
+			<td><%= menu[i].name %></td>
+			<td><%= menu[i].price %></td>
+		</tr>
+			
+		
+	<% } %>
+	</table>
+	
+</body>
+</html>

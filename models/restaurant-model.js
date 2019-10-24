@@ -39,6 +39,20 @@ module.exports={
 			}
 		});
 	},
+	
+	getAllbyID : function(id, callback){
+		var sql = "select * from menu where rid=?";
+
+		db.getResults(sql, [id], function(results){
+
+			if(results.length > 0 ) {
+				callback(results);
+			}else{
+				callback([]);
+			}
+		});
+	},
+	
 	insert : function(restaurant, callback){
 		var sql = "insert into restaurant values('', ?, ?)";
 		db.execute(sql, [restaurant.restaurantname, restaurant.password], function(status){

@@ -13,6 +13,15 @@ router.get('/restaurentList', function(req, res){
 		});
 });
 
+router.get('/menu/:id', function(req, res){
+
+		restaurantModel.getAllbyID(req.params.id,function(results){
+			//restaurantModel.getAll(function(results1);
+			res.render('restaurant/Menu',{menu: results});
+			
+		});
+});
+
 
 
 module.exports = router;
