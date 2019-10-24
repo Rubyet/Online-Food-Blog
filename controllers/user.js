@@ -2,14 +2,14 @@ var express = require('express');
 var userModel = require('./../models/user-model');
 var router = express.Router();
 
-router.get('*', function(req, res, next){
-
-	if(req.cookies['username'] != null){
-		next();
-	}else{
-		res.redirect('/login');
-	}
-});
+//router.get('*', function(req, res, next){
+//
+//	if(req.cookies['username'] != null){
+//		next();
+//	}else{
+//		res.redirect('/login');
+//	}
+//});
 
 router.get('/userlist', function(req, res){
 
@@ -17,31 +17,33 @@ router.get('/userlist', function(req, res){
 			if(req.cookies['username'] != null){
 				res.render('user/index', {user: results});
 			}else{
-				res.redirect('/login');
+				res.redirect('/blog');
 			}
 		});
 });
 
 
-router.get('/adduser', function(req, res){
-	res.render('user/adduser');
-});
+//router.get('/adduser', function(req, res){
+//	res.render('user/adduser');
+//});
 
 router.get('/reg', function(req, res){
 	res.render('user/reg');
 });
-router.post('/adduser', function(req, res){
+router.post('/reg', function(req, res){
 
 	var user = {
 		username: req.body.username,
-		password: req.body.password
+		password: req.body.password,
+		type: req.body.type,
+		email: req.body.email
 	};
 
 	userModel.insert(user, function(status){
 		if(status){
 			res.redirect('/user/userlist');
 		}else{
-			res.redirect('/user/adduser');
+			res.redirect('user/reg');
 		}
 	});
 });
@@ -49,7 +51,7 @@ router.post('/adduser', function(req, res){
 router.get('/edit/:id', function(req, res){
 
 	userModel.getById(req.params.id, function(results){
-		res.render('user/edit', {user: results[0]});		
+		res.render('user/edit', {user: results[0]});
 	});
 
 });

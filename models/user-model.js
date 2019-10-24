@@ -7,7 +7,7 @@ module.exports={
 		var sql = "select * from user where id=?";
 		db.getResults(sql, [id], function(result){
 
-			//console.log(result);
+			console.log(result);
 			if(result.length > 0 ){
 				callback(result[0]);
 			}else{
@@ -40,8 +40,8 @@ module.exports={
 		});
 	},
 	insert : function(user, callback){
-		var sql = "insert into user values('', ?, ?)";
-		db.execute(sql, [user.username, user.password], function(status){
+		var sql = "insert into user values('', ?, ?, ?, ?)";
+		db.execute(sql, [user.username, user.password, user.type, user.email], function(status){
 			callback(status);
 		});
 	},

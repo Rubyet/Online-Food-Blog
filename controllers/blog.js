@@ -4,7 +4,7 @@ var router = express.Router();
 
 
 
-router.get('/blog', function(req, res){
+router.get('/', function(req, res){
 
 		blogModel.getAll(function(results,results1){
 			
